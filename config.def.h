@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char font[] = "Hack:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -70,30 +70,31 @@ static unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#1E2320",   // black
+	"#705050",   // red
+	"#60b48a",   // green
+	"#dfaf8f",   // yellow
+	"#506070",   // blue
+	"#dc8cc3",   // purple
+	"#8cd0d3",   // cyan
+	"#dcdccc",   // white
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#709080",   // bright black
+	"#dca3a3",   // bright red
+	"#c3bf9f",   // bright green
+	"#f0dfaf",   // bright yellow
+	"#94bff3",   // bright blue
+	"#ec93d3",   // bright purple
+	"#93e0e3",   // bright cyan
+	"#ffffff",   // bright white
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#dcdccc",
+	"#3f3f3f",
+	"#fafafa",
 };
 
 
@@ -101,9 +102,9 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-static unsigned int defaultfg = 7;
-static unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
+static unsigned int defaultfg = 256;
+static unsigned int defaultbg = 257;
+static unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -416,4 +417,3 @@ static Key key[] = {
 static uint selmasks[] = {
 	[SEL_RECTANGULAR] = Mod1Mask,
 };
-
